@@ -67,7 +67,7 @@ func CreateConfigDir() {
 	configDir, _ := ConfigDir()
 
 	if _, err := os.Stat(configDir); os.IsNotExist(err) {
-		err := os.Mkdir(configDir, os.ModePerm)
+		err := os.MkdirAll(configDir, os.ModePerm)
 		if err != nil {
 			panic(err)
 		}
